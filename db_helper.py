@@ -11,6 +11,37 @@ class App:
     def close(self):
         self.driver.close()
 
+    def create_course(self, name, id, description):
+        with self.driver.session() as session:
+            # Write transactions allow the driver to handle retries and transient errors
+            result = session.write_transaction(
+                self._create_course, name, id, description)
+            for record in result:
+                print("Created")
+                      #.format(p1=record['p1'], p2=record['p2']))
+
+    
+    @staticmethod
+    def _create_course(tx, name, id, description):
+        # To learn more about the Cypher syntax, see https://neo4j.com/docs/cypher-manual/current/
+        # The Reference Card is also a good resource for keywords https://neo4j.com/docs/cypher-refcard/current/
+        query = (
+            "CREATE (n:Course {CS_NAME: $name, CS_ID: $id ,CS_DESC_LONG: $description })"
+        
+        )
+        result = tx.run(query, name=name, id = id, description = description)
+        try:
+            return [{"c": record["c"]["name"]}
+                    for record in result]
+        # Capture any errors along with the query and data for traceability
+        except Neo4jError as exception:
+            logging.error("{query} raised an error: \n {exception}".format(
+                query=query, exception=exception))
+            raise
+    
+
+
+
 
 # Examples to get started!!!
 '''
@@ -62,16 +93,18 @@ class App:
 '''
 
 
-
-
-if __name__ == "__main__":
+def add_to_db(cs_name, cs_id, cs_desc):
     # Aura queries use an encrypted connection using the "neo4j+s" URI scheme
-    uri = "neo4j+s://f91315f9.databases.neo4j.io:7687"
+    uri = "neo4j+s://da1fc458.databases.neo4j.io"
     user = "neo4j"
-    password = "RRU6tr2pnLqfJIyqJnLm5RX731DB5Gxq4-jXQ-QF99Y"
+    password = "Tqwgb8R_vZJOO21ptk74u899ZI-ktab2ekpF5oKxEe4"
+
     app = App(uri, user, password)
     #app.create_friendship("Alice", "David")
     #app.find_person("Alice")
+    app.create_course(cs_name, cs_id, cs_desc)
 
     app.close()
+
+
 
