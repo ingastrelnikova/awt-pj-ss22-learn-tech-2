@@ -1,7 +1,5 @@
 from flask import Flask, request
-import xmltodict
-from xml.etree import ElementTree as ET
-import db_helper as db
+import course_import as ci
 
 
 app = Flask(__name__)
@@ -14,40 +12,26 @@ def function():
 @app.route('/course', methods=["POST"])
 def import_course_descriptions():
     xml_data = request.get_data().decode('utf-8')
-    
-    #name, id, description = import_course(xml_data)
-    #db.add_to_db(name, id, description)
+    print(xml_data)
+    ci.import_course(xml_data)
+
     return ''
     
-'''
 
-def import_course(xml): #possibly get the document as a parameter
-    #tree = ET.parse(xml)#'data/course-description/FOKUS_AWT_CompetencyExtraction_WB_Brandenburg.xml')
-    tree = ET.fromstring(xml)
-    courses = tree.findall('.//COURSE')
+@app.route('/competency_by_course', methods=["GET"])
+def get_competencies_covered():
+    course_id = request.get_data() 
 
-    #for course in courses: 
-    name = courses[0].find('CS_NAME') 
-    id = courses[0].find('CS_ID') 
-    description = courses[0].find('CS_DESC_LONG') 
-    
-    #create a new XML file
-    root = ET.Element("COURSE")
-    root.append(name)
-    root.append(id)
-    root.append(description)
-    tree_new = ET.ElementTree(root)
-
-    string = ET.tostring(root, encoding='unicode')
-    #print(name.text)
-
-    #tree_new.write('course.xml')
-
-    return name.text, id.text, description.text
-
-#= import_course()
+    return ''
 
 
-'''
+
+@app.route('/find_courses', methods=["GET"])
+def find_courses_by_competency():
+    competency = request.get_data() 
+
+    return ''
+
+
 if __name__ == "__main__":
     app.run()

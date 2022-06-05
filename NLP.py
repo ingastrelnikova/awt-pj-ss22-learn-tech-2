@@ -1,5 +1,6 @@
 # pip install spacy
 # python -m spacy download de_core_news_lg
+# pip3 install lxml
 import pandas as pd
 import spacy
 
@@ -35,6 +36,36 @@ for i,sequence in enumerate(skill_labels):
 
 course_descriptions = pd.read_xml('./data/course-description/example.xml')['CS_DESC_LONG']
 text = sp(course_descriptions[1])
+'''
+courses = pd.read_csv('all_courses1.csv')
+
+text = sp(courses['couse_description'][1])
+
+sequence = []
+results = []
+relationship = []
+for term in sp(courses['couse_description'][1]):
+    term = term.lemma_.lower()
+    if term in termStore:
+        sequence.append(termStore[term])
+    else:
+        if sequence != []:
+            URI = []
+            for i in sequence:
+                URI.append(i)
+                if tuple(URI) in sequenceStore: 
+                    result = sequenceStore[tuple(URI)]
+                else: break
+            if result: 
+                results.append(result)
+                relationship.append((skills['conceptUri'][result[0]],courses['course_id'][1]))
+            result = None
+        sequence = []
+results
+
+'''
+
+
 
 sequence = []
 results = []
