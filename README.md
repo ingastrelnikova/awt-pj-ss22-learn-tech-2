@@ -1,6 +1,9 @@
 # awt-pj-ss22-learn-tech-2
 AWT Project SS22 Learning Technologies - Competence Extraction via ML / NLP 2
 
+<img width="574" alt="image" src="https://user-images.githubusercontent.com/24925361/174609566-6fe9b4b5-e03e-49be-a846-fc88597d49f8.png">
+
+
 **Helpful Links:
 * Miroboard: https://miro.com/app/board/uXjVO4rE3z4=/
 * First Presentation: https://docs.google.com/presentation/d/1Khsn_8M1RbjfMqUFCwPy9wX0nEmaIjShYJDiTsIkKAM/edit#slide=id.g122c239953c_2_10
