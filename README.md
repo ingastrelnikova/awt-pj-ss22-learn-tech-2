@@ -1,7 +1,7 @@
 # awt-pj-ss22-learn-tech-2
 AWT Project SS22 Learning Technologies - Competence Extraction via ML / NLP 2
 
-<img width="1000" alt="image" src="https://user-images.githubusercontent.com/24925361/174609566-6fe9b4b5-e03e-49be-a846-fc88597d49f8.png">
+<img width="1200" alt="image" src="https://user-images.githubusercontent.com/24925361/174609566-6fe9b4b5-e03e-49be-a846-fc88597d49f8.png">
 
 
 **Helpful Links:
