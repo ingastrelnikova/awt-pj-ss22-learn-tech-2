@@ -1,7 +1,7 @@
 # SS22 Project Advanced Web Technologies 
 ## Learning Technologies - Competence Extraction via ML / NLP 2
 
-![Project - Frame 1](https://user-images.githubusercontent.com/24925361/174661886-8f22ce96-e502-4261-8b14-0007c04298c8.jpg)
+![image](https://user-images.githubusercontent.com/24925361/174857275-ba3f57b5-612e-47ac-9986-a11b2d5dcf12.png)
 
 <img width="1200" alt="image" src="https://user-images.githubusercontent.com/24925361/174611489-74393c0b-8e83-450a-99b6-f3e9d20bf14f.png">
 
