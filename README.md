@@ -5,7 +5,7 @@
 
 ## Core Components:
 * [Data Preprocessing](./src/Preprocessing.ipynb)
-* [Competence Extraction](./src/NLP.ipynb)
+* [Competence Extraction (NLP)](./src/NLP.ipynb)
 * [Database Access](./src/Neo4J.ipynb)
 
 ## Helpful Links:
