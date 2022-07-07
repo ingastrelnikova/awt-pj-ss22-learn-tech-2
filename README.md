@@ -3,6 +3,11 @@
 
 ![image](https://user-images.githubusercontent.com/24925361/177127956-c960acc4-e3df-44e4-a70a-2547131fa42c.png)
 
+## Core Components:
+* [Data Preprocessing](./src/Preprocessing.ipynb)
+* [Competence Extraction](./src/NLP.ipynb)
+* [Database Access](./src/Neo4J.ipynb)
+
 ## Helpful Links:
 * [Miroboard](https://miro.com/app/board/uXjVO4rE3z4=/)
 * [EU-ESCO (Multilingual classification of European Skills, Competences)](https://esco.ec.europa.eu/en)
