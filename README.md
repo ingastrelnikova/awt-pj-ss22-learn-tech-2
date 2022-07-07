@@ -7,6 +7,7 @@
 * [Data Preprocessing](./src/Preprocessing.ipynb)
 * [Competence Extraction (NLP)](./src/NLP.ipynb)
 * [Database Access](./src/Neo4J.ipynb)
+* [RESTful API](./src/app.py)
 
 ## Helpful Links:
 * [Miroboard](https://miro.com/app/board/uXjVO4rE3z4=/)
