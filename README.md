@@ -1,7 +1,16 @@
 # SS22 Project Advanced Web Technologies 
 ## Learning Technologies - Competence Extraction via ML / NLP
+<img width="300" alt="TUB" src="https://user-images.githubusercontent.com/24925361/178028367-d6106e60-664a-41d7-940f-46c9e59ed870.png"> <img width="382" alt="FOKUS" src="https://user-images.githubusercontent.com/24925361/178028417-3c6a1740-cf41-4a98-8f3f-735cbfbd9b0b.png">
 
+
+## Project Structure
 ![image](https://user-images.githubusercontent.com/24925361/177127956-c960acc4-e3df-44e4-a70a-2547131fa42c.png)
+
+## Core Components:
+* [Data Preprocessing](./src/Preprocessing.ipynb)
+* [Competence Extraction (NLP)](./src/NLP.ipynb)
+* [Database Access](./src/Neo4J.ipynb)
+* [RESTful API](./src/app.py)
 
 ## Helpful Links:
 * [Miroboard](https://miro.com/app/board/uXjVO4rE3z4=/)
