@@ -105,7 +105,7 @@ class App:
         )
         results = tx.run(query, csv_path=csv_path)
         
-    def read_skills(self, csv_path):
+    '''def read_skills(self, csv_path):
         with self.driver.session() as session:
             result = session.write_transaction(self._read_skills, csv_path)
             print(result)
@@ -144,4 +144,70 @@ class App:
             "MATCH (s:Skill{preferred_label: $ preferred_label}) MATCH (s)-[]-(course) RETURN course"
         )
         results = tx.run(query, preferred_label=preferred_label)
-        return [row.data()['course'] for row in results]
+        return [row.data()['course'] for row in results]'''
+
+    def find_skills(self, course_id):
+        with self.driver.session() as session:
+            result = session.write_transaction(self._find_skills, course_id)
+        return result
+
+    @staticmethod
+    def _find_skills(tx, course_id):
+        query = (
+            "MATCH (course:Course {course_id: $course_id})-[provide_skill:PROVIDE_SKILL]->(skill) \
+            RETURN course.course_name, skill.preferred_label"
+        )
+        results = tx.run(query, course_id=course_id)
+        skills = []
+        add_course_name = True
+        course_name = ''
+        for result in results:
+            if add_course_name:
+                course_name = result['course.course_name']
+                add_course_name = False
+            skills.append(result['skill.preferred_label'])
+        return course_name, skills
+    
+    def find_courses(self, concept_uri):
+        with self.driver.session() as session:
+            result = session.write_transaction(self._find_courses, concept_uri)
+        return result
+
+    @staticmethod
+    def _find_courses(tx, concept_uri):
+        query = (
+            "MATCH (skill:Skill {concept_uri: $concept_uri})<-[provide_skill:PROVIDE_SKILL]-(course) \
+            RETURN skill.preferred_label, course.course_name"
+        )
+        results = tx.run(query, concept_uri=concept_uri)
+        courses = []
+        add_skill_label = True
+        skill_label = ''
+        for result in results:
+            if add_skill_label:
+                skill_label = result['skill.preferred_label']
+                add_skill_label = False
+            courses.append(result['course.course_name'])
+        return skill_label, courses
+
+    def find_courses_by_label(self, label):
+        with self.driver.session() as session:
+            result = session.write_transaction(self._find_courses_by_label, label)
+        return result
+
+    @staticmethod
+    def _find_courses_by_label(tx, label):
+        query = (
+            "MATCH (skill:Skill {preferred_label: $label})<-[provide_skill:PROVIDE_SKILL]-(course) \
+            RETURN skill.preferred_label, course.course_name"
+        )
+        results = tx.run(query, label=label)
+        courses = []
+        add_skill_label = True
+        skill_label = ''
+        for result in results:
+            if add_skill_label:
+                skill_label = result['skill.preferred_label']
+                add_skill_label = False
+            courses.append(result['course.course_name'])
+        return skill_label, courses
