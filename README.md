@@ -3,8 +3,8 @@
 <img width="300" alt="TUB" src="https://user-images.githubusercontent.com/24925361/178028367-d6106e60-664a-41d7-940f-46c9e59ed870.png"> <img width="382" alt="FOKUS" src="https://user-images.githubusercontent.com/24925361/178028417-3c6a1740-cf41-4a98-8f3f-735cbfbd9b0b.png">
 
 
-## Project Structure
-![image](https://user-images.githubusercontent.com/24925361/178320433-2e464f05-6f58-4ded-80fe-5a3c1d65a920.png)
+## Project Architecture
+![image](https://user-images.githubusercontent.com/24925361/179632972-f31daac6-7818-4164-97de-500bed627066.png)
 
 ## Core Components:
 * [Data Preprocessing](./src/Preprocessing.ipynb)
