@@ -4,7 +4,7 @@
 
 
 ## Project Architecture
-![image](https://user-images.githubusercontent.com/24925361/179632972-f31daac6-7818-4164-97de-500bed627066.png)
+![image](https://user-images.githubusercontent.com/24925361/181211968-0ce909d1-4558-4eb8-8e19-32c46d24398d.png)
 
 ## Core Components:
 * [Data Preprocessing](./src/Preprocessing.ipynb)
