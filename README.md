@@ -2,9 +2,28 @@
 ## Learning Technologies - Competence Extraction via ML / NLP
 <img width="300" alt="TUB" src="https://user-images.githubusercontent.com/24925361/178028367-d6106e60-664a-41d7-940f-46c9e59ed870.png"> <img width="382" alt="FOKUS" src="https://user-images.githubusercontent.com/24925361/178028417-3c6a1740-cf41-4a98-8f3f-735cbfbd9b0b.png">
 
-
 ## Project Architecture
 ![image](https://user-images.githubusercontent.com/24925361/181214266-02faef6f-4692-45ec-bf81-4c2641c5e483.png)
+
+## Installation
+The project is based on [Anaconda environment](https://www.anaconda.com/)
+and some additional installations are also required:
+
+**Spacy:**
+```shell
+conda install -c conda-forge spacy
+python -m spacy download de_core_news_lg
+```
+
+**Tensorflow:**
+```shell
+pip install tensorflow==2.9.0
+pip install tensorflow_text==2.9.0
+pip install tensorflow_hub
+```
+
+Or you can use our packaged docker image:
+
 
 ## Core Components:
 * [Data Preprocessing](./src/Preprocessing.ipynb)
