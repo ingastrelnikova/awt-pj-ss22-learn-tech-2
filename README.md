@@ -22,6 +22,12 @@ pip install tensorflow_text==2.9.0
 pip install tensorflow_hub
 ```
 
+**Neo4J:**
+```shell
+pip install neo4j
+```
+
+
 Or you can use our packaged docker image:
 
 
