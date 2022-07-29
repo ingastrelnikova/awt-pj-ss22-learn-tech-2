@@ -11,7 +11,8 @@ and some additional installations are also required:
 
 **Spacy:**
 ```shell
-conda install -c conda-forge spacy
+pip install -U pip setuptools wheel
+pip install -U spacy
 python -m spacy download de_core_news_lg
 ```
 
