@@ -28,6 +28,12 @@ pip install tensorflow_hub
 pip install neo4j
 ```
 
+**RESTful API**
+```
+pip install Flask~=2.1.2
+pip install flask-restx==0.5.1
+pip install werkzeug==2.1.2
+```
 
 Or you can use our packaged docker image:
 
