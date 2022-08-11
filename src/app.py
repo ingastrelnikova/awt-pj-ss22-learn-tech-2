@@ -13,11 +13,11 @@ api = Api(app, version='1.0', title='Competency extranction from courses',
 )
 
 ns = api.namespace('Filtering options', 
-                   description='Available filtering options for the user.')
+                   description='Available filtering options for the user. Please click "Try it out" before entering the parameters')
 
 uri = "neo4j+s://fbb398e7.databases.neo4j.io"
+user = "neo4j"
 password = "3bO4Zwc9eYOyZBQ_CHE49lqd7NKeLSySJAq4flxUtAA"
-user = "neo4j"  
 
 app1 = database_helper.App(uri, user, password)
 
