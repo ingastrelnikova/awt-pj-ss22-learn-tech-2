@@ -72,13 +72,16 @@ You can also use
 jupyter notebook --allow-root
 ```
 to start Jupyter Notebook again.
-*** 
 
 Finally, enter 
 ```shell
 exit
 ```
 to exit container.
+
+*** 
+
+
 
 Or you can install them manually:
 
