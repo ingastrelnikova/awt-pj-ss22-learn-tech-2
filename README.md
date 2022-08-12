@@ -34,7 +34,7 @@ Enter the following command to start a container from this image on port 8080 fo
 ```shell
 docker run --user root -p 8888:8888 -p 5000:5000 competence-extraction:1.0
 ```
-Open the last link from information on the terminal in the browser so that you can access the source code. Please save this link for future use !!!
+Open the last link from information on the terminal in the browser so that you can access the source code. **!!! Please save this link for future use !!!**
 
 There are four different Jupyter Notebooks under the ```src/``` path. You can find a detailed description of them in [AWT_Report_IEEE.pdf](./AWT_Report_IEEE.pdf). Here are a few points to highlight:
 
@@ -66,7 +66,7 @@ Enter
 ```shell
 python awt-pj-ss22-learn-tech-2/src/app.py 
 ```
-to run the RESTful API, and open the corresponding link in the browser according to the information on the terminal.
+to run the RESTful API, and open the first link according to the information on the terminal in the browser.
 
 Use ```Ctrl+C``` (key combinations on the keyboard) to close the RESTful API.
 
