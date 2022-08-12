@@ -5,8 +5,84 @@
 ## Project Architecture
 ![image](https://user-images.githubusercontent.com/24925361/181214266-02faef6f-4692-45ec-bf81-4c2641c5e483.png)
 
+
 ## Installation
-The project is based on [Anaconda environment](https://www.anaconda.com/)
+It is recommended to configure the environment directly using our ```Dockerfile```:
+
+Install Docker according to the instructions on the [Docker website](https://docs.docker.com/get-docker/)
+
+Open the terminal and enter:
+```shell
+docker -v
+```
+Check if Docker is installed successfully, if not retry the previous step.
+
+Go to the same directory as the ```Dockerfile```
+
+Type the following command to build the Docker image from the Dockerfile:
+```shell
+docker build -t competence-extraction:1.0 ./
+```
+All dependencies will be downloaded automatically, which will last for a while.
+
+Type the following command and you will see the ```competence-extraction``` image you just built:
+```shell
+docker images
+```
+
+Enter the following command to start a container from this image on port 8080 for Jupyter Notebook and port 5000 for RESTful API:
+```shell
+docker run --user root -p 8888:8888 -p 5000:5000 competence-extraction:1.0
+```
+Open the corresponding link in the browser according to the information on the terminal so that you can access the source code. There are four different Jupyter Notebooks under the ```src/``` path. You can find a detailed description of them in [AWT_Report_IEEE.pdf](./AWT_Report_IEEE.pdf). Here are a few points to highlight:
+
+* All existing datasets have been processed and you can directly view the results using the RESTful API in the next step.
+* If you want to test the source code, run each block of code in the Jupyter Notebook in the order of ```Preprocessing.ipynb``` -> ```NLP.ipynb``` -> ```Neo4J.ipynb```, you can see all the intermediate steps.
+* By default the control course dataset is used (the input value of the ```import_course``` function in ```Preprocessing.ipynb```, it will take more than an hour to use the full course dataset), if you want to test other datasets, please replace the input parameters of the ```import_course``` function.
+* In ```Neo4J.ipynb```, due to the security settings of the cloud database we use, all local computing data cannot be directly imported into the database. It needs to be uploaded to a publicly accessible HTTP or HTTPS server first. It is recommended to use google drive and create a sharing link. The ```get_google_file``` function in ```Neo4J.ipynb``` will extract the address of the direct access data file from it and upload it to the cloud database.
+* You can also use your own cloud database by replacing ```uri``` ```user``` ```password``` in ```Neo4J.ipynb``` or your own network drive, and upload to the cloud database using a similar method.
+* ```Evaluation.ipynb``` is only used as a potential evaluation tool and is not actually used.
+
+Use ```Ctrl+C``` (key combinations on the keyboard) to exit the Jupyter Notebook environment, enter
+```shell
+docker ps -a
+```
+to find the container that just created and already run the Jupyter Notebook, remember the ```CONTAINER ID``` this container.
+
+Start the container container again:
+```shell
+docker start "CONTAINER ID"
+```
+Use
+```shell
+docker exec -it "CONTAINER ID" bash 
+```
+to enter the terminal of the container
+
+Enter
+```shell
+python awt-pj-ss22-learn-tech-2/src/app.py 
+```
+to run the RESTful API, and open the corresponding link in the browser according to the information on the terminal.
+
+Use ```Ctrl+C``` (key combinations on the keyboard) to close the RESTful API.
+
+You can also use 
+```shell
+jupyter notebook --allow-root
+```
+to start Jupyter Notebook again.
+*** 
+
+Finally, enter 
+```shell
+exit
+```
+to exit container.
+
+Or you can install them manually:
+
+Install [Anaconda environment](https://www.anaconda.com/) first,
 and some additional installations are also required:
 
 **Spacy:**
@@ -35,9 +111,6 @@ pip install flask-restx==0.5.1
 pip install werkzeug==2.1.2
 ```
 
-Or you can use our packaged docker image:
-
-
 ## Core Components:
 * [Data Preprocessing](./src/Preprocessing.ipynb)
 * [Competence Extraction (NLP)](./src/NLP.ipynb)
@@ -53,37 +126,3 @@ Or you can use our packaged docker image:
 * [Second Presentation](https://docs.google.com/presentation/d/1qBtznjY1o8PyaYzvs-UPRpJHfz8Td3pSIfjiIBseZYs/edit#slide=id.g122c239953c_2_16)
 * [Third Presentation](https://docs.google.com/presentation/d/10RYty7uy4iDyFTbF-Z_PJPTfI8WNRnBT98rpj2WZr0M/edit#slide=id.g12f87666f53_0_0)
 * [Content Documentation](https://docs.google.com/document/d/1mfp5A2DEiTcGTzrYrh6c9gaYeMAisS2vuYwDd_1vQfo/edit?usp=sharing)
-
-## Meeting 29.04.2022
-* Get to know each other
-* Get an overview about the problem
-
-## Meeting 03.05.2022
-* Figure out a possible solution
-* Talk about the Miroboard of Jialun
-* Neo4J as a graph database
-
-Task: 
-* distribution for the first presentation
-* Stefan: Introduction and problem statement
-* Jialun: Paper Review
-* Inga: Potential solution, schedule, next steps
-
-## Meeting 05.05.2022
-* Finalizing the presentation
-
-## Meeting 08.05.2022
-* Recording of the presentation
-Tasks:
-* Stefan: Upload presentation and recording
-
-## Meeting 17.05.2022
-* Debriefing of the workshop
-* Task Distribution
-*   -> See Issues
-
-## Meeting 24.05.2022
-* Disscussion of problems:
-*  -> Display of Umlaute (ä,ö,ü) in XML and CSV files
-* Upload of compentecies and course descriptions to the db works
-* We have to find a way to connect the nodes
