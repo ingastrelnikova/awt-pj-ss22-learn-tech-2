@@ -34,7 +34,9 @@ Enter the following command to start a container from this image on port 8080 fo
 ```shell
 docker run --user root -p 8888:8888 -p 5000:5000 competence-extraction:1.0
 ```
-Open the corresponding link in the browser according to the information on the terminal so that you can access the source code. There are four different Jupyter Notebooks under the ```src/``` path. You can find a detailed description of them in [AWT_Report_IEEE.pdf](./AWT_Report_IEEE.pdf). Here are a few points to highlight:
+Open the last link from information on the terminal in the browser so that you can access the source code. Please save this link for future use !!!
+
+There are four different Jupyter Notebooks under the ```src/``` path. You can find a detailed description of them in [AWT_Report_IEEE.pdf](./AWT_Report_IEEE.pdf). Here are a few points to highlight:
 
 * All existing datasets have been processed and you can directly view the results using the RESTful API in the next step.
 * If you want to test the source code, run each block of code in the Jupyter Notebook in the order of ```Preprocessing.ipynb``` -> ```NLP.ipynb``` -> ```Neo4J.ipynb```, you can see all the intermediate steps.
@@ -68,11 +70,7 @@ to run the RESTful API, and open the corresponding link in the browser according
 
 Use ```Ctrl+C``` (key combinations on the keyboard) to close the RESTful API.
 
-You can also use 
-```shell
-jupyter notebook --allow-root
-```
-to start Jupyter Notebook again.
+You can also use the same link (the one you should save) to start Jupyter Notebook again.
 
 Finally, enter 
 ```shell
@@ -81,8 +79,6 @@ exit
 to exit container.
 
 *** 
-
-
 
 Or you can install them manually:
 
