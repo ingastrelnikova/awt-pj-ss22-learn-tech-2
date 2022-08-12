@@ -17,7 +17,7 @@ docker -v
 ```
 Check if Docker is installed successfully, if not retry the previous step.
 
-Go to the proeject directory ```/awt-pj-ss22-learn-tech-2```
+Go to the project directory ```/awt-pj-ss22-learn-tech-2```
 
 Type the following command to build the Docker image from the Dockerfile:
 ```shell
