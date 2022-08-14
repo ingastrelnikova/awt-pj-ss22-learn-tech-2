@@ -17,7 +17,7 @@ It is recommended to configure the environment directly using our ```Dockerfile`
     ```
     Check if Docker is installed successfully, if not retry the previous step.
 
-1. Go to the project directory ```/awt-pj-ss22-learn-tech-2```
+1. Unzip ```/awt-pj-ss22-learn-tech-2.zip``` and go to the project directory ```/awt-pj-ss22-learn-tech-2```
 
     Type the following command to build the Docker image from the Dockerfile:
     ```shell
