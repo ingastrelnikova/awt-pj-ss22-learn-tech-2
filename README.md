@@ -21,7 +21,11 @@ It is recommended to configure the environment directly using our ```Dockerfile`
 
     Type the following command to build the Docker image from the Dockerfile:
     ```shell
-    sudo docker build -t competence-extraction:1.0 ./
+    sudo DOCKER_BUILDKIT=1 docker build -t competence-extraction:1.0 ./
+    ```
+    or use this command if you have **M1** chip
+    ```shell
+    sudo DOCKER_BUILDKIT=1 docker build --platform linux/amd64 -t competence-extraction:1.0 ./
     ```
     All dependencies will be downloaded automatically, which will last for a while.
 
@@ -34,6 +38,15 @@ It is recommended to configure the environment directly using our ```Dockerfile`
     ```shell
     sudo docker run --user root -p 8888:8888 -p 5000:5000 competence-extraction:1.0
     ```
+    You may need to change port if it is ocuppied. For example, using:
+    ```shell
+    sudo docker run --user root -p 8888:8888 -p 5001:5000 competence-extraction:1.0
+    ```
+    or
+    ```shell
+    sudo docker run --user root -p 8889:8888 -p 5000:5000 competence-extraction:1.0
+    ```
+
     Use a browser to open the last link given on the terminal so that you can access the source code. **!!! Please save this link for future use !!!**
 
     There are four different Jupyter Notebooks under the ```src/``` path. You can find a detailed description of them in [AWT_Report_IEEE.pdf](./AWT_Report_IEEE.pdf).
