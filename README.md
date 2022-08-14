@@ -21,18 +21,18 @@ It is recommended to configure the environment directly using our ```Dockerfile`
 
     Type the following command to build the Docker image from the Dockerfile:
     ```shell
-    docker build -t competence-extraction:1.0 ./
+    sudo docker build -t competence-extraction:1.0 ./
     ```
     All dependencies will be downloaded automatically, which will last for a while.
 
 1. Type the following command and you will see the ```competence-extraction``` image you just built:
     ```shell
-    docker images
+    sudo docker images
     ```
     
 1. Enter the following command to start a container from this image on port 8080 for Jupyter Notebook and port 5000 for RESTful API:
     ```shell
-    docker run --user root -p 8888:8888 -p 5000:5000 competence-extraction:1.0
+    sudo docker run --user root -p 8888:8888 -p 5000:5000 competence-extraction:1.0
     ```
     Use a browser to open the last link given on the terminal so that you can access the source code. **!!! Please save this link for future use !!!**
 
@@ -49,24 +49,24 @@ It is recommended to configure the environment directly using our ```Dockerfile`
 
 1. Use ```Ctrl+C``` (key combinations on the keyboard) to exit the Jupyter Notebook environment, enter
     ```shell
-    docker ps -a
+    sudo docker ps -a
     ```
     to find the container that just created and already run the Jupyter Notebook, remember the ```<CONTAINER ID>``` this container.
 
 1. Start the container container again:
     ```shell
-    docker start <CONTAINER ID>
+    sudo docker start <CONTAINER ID>
     ```
 
 1. Use
     ```shell
-    docker exec -it <CONTAINER ID> bash 
+    sudo docker exec -it <CONTAINER ID> bash 
     ```
     to enter the terminal of the container
 
 1. Enter
     ```shell
-    python awt-pj-ss22-learn-tech-2/src/app.py 
+    sudo python awt-pj-ss22-learn-tech-2/src/app.py 
     ```
     to run the RESTful API, and open the first link according to the information on the terminal in the browser.
 
@@ -89,28 +89,28 @@ and some additional installations are also required:
 
 **Spacy:**
 ```shell
-pip install -U pip setuptools wheel
-pip install -U spacy
-python -m spacy download de_core_news_lg
+sudo pip install -U pip setuptools wheel
+sudo pip install -U spacy
+sudo python -m spacy download de_core_news_lg
 ```
 
 **Tensorflow:**
 ```shell
-pip install tensorflow==2.9.0
-pip install tensorflow_text==2.9.0
-pip install tensorflow_hub
+sudo pip install tensorflow==2.9.0
+sudo pip install tensorflow_text==2.9.0
+sudo pip install tensorflow_hub
 ```
 
 **Neo4J:**
 ```shell
-pip install neo4j
+sudo pip install neo4j
 ```
 
 **RESTful API:**
 ```
-pip install Flask~=2.1.2
-pip install flask-restx==0.5.1
-pip install werkzeug==2.1.2
+sudo pip install Flask~=2.1.2
+sudo pip install flask-restx==0.5.1
+sudo pip install werkzeug==2.1.2
 ```
 
 ## Core Components:
