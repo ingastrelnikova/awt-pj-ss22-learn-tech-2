@@ -13,7 +13,7 @@ It is recommended to configure the environment directly using our ```Dockerfile`
 
 1. Open the terminal and enter:
     ```shell
-    docker -v
+    sudo docker -v
     ```
     Check if Docker is installed successfully, if not retry the previous step.
 
