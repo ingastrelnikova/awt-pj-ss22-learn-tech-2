@@ -95,7 +95,7 @@
 
 1. Install [Anaconda environment](https://www.anaconda.com/) first.
 
-1. Open ```Anaconda-Navigator``` -> click ```Enviroments``` -> select an environment -> click the triangle symbol -> ```Open Terminal```.
+1. Open ```Anaconda-Navigator``` -> click ```Enviroments``` -> create a new environment -> click the triangle symbol on this environment -> ```Open Terminal```.
 
 1. Some additional installations are also required:
 
@@ -107,8 +107,7 @@
 
     **Tensorflow:**
     ```shell
-    conda install -c apple tensorflow-deps
-    pip install tensorflow-macos
+    pip install tensorflow
     pip install tensorflow_text
     pip install tensorflow_hub
     ```
