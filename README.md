@@ -132,7 +132,7 @@
     
     **Pandas:**
     ```shell
-    conda install -c pandas
+    conda install pandas
     ```
 
 1. **Use Jupyter Notebook to run source code:**
