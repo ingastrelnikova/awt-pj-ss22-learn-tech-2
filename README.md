@@ -6,12 +6,7 @@
 ![image](https://user-images.githubusercontent.com/24925361/181214266-02faef6f-4692-45ec-bf81-4c2641c5e483.png)
 
 
-## Installation
-(Based on the ```x86``` platform, ```ARM/M1``` has compatibility issues and is temporarily not supported)
-
-It is recommended to configure the environment directly using our ```Dockerfile```:
-
-
+## Installation (```x86``` platform)
 
 1. Install Docker according to the instructions on the [Docker website](https://docs.docker.com/get-docker/)
 
@@ -96,38 +91,39 @@ It is recommended to configure the environment directly using our ```Dockerfile`
     ```
     to exit container.
 
-*** 
+## Installation (```ARM/M1``` platform)
 
-Or you can install them manually:
+1. Install [Anaconda environment](https://www.anaconda.com/) first.
 
-Install [Anaconda environment](https://www.anaconda.com/) first,
-and some additional installations are also required:
+1. Open ```Anaconda-Navigator``` -> click ```Enviroments``` -> select an environment -> click the triangle symbol -> ```Open Terminal```.
 
-**Spacy:**
-```shell
-sudo pip install -U pip setuptools wheel
-sudo pip install -U spacy
-sudo python -m spacy download de_core_news_lg
-```
+1. Some additional installations are also required:
 
-**Tensorflow:**
-```shell
-sudo pip install tensorflow==2.9.0
-sudo pip install tensorflow_text==2.9.0
-sudo pip install tensorflow_hub
-```
+    **Spacy:**
+    ```shell
+    conda install -c conda-forge spacy
+    python -m spacy download de_core_news_lg
+    ```
 
-**Neo4J:**
-```shell
-sudo pip install neo4j
-```
+    **Tensorflow:**
+    ```shell
+    conda install -c apple tensorflow-deps
+    pip install tensorflow-macos
+    pip install tensorflow_text
+    pip install tensorflow_hub
+    ```
 
-**RESTful API:**
-```
-sudo pip install Flask~=2.1.2
-sudo pip install flask-restx==0.5.1
-sudo pip install werkzeug==2.1.2
-```
+    **Neo4J:**
+    ```shell
+    pip install neo4j
+    ```
+
+    **RESTful API:**
+    ```
+    pip install Flask~=2.1.2
+    pip install flask-restx==0.5.1
+    pip install werkzeug==2.1.2
+    ```
 
 ## Core Components:
 * [Data Preprocessing](./src/Preprocessing.ipynb)
