@@ -95,17 +95,11 @@
 
 1. Install [Anaconda environment](https://www.anaconda.com/) first.
 
-1. Download and install [Conda env](https://developer.apple.com/metal/tensorflow-plugin/)
+1. Download and install [Conda env](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh) for M1
      ```shell
     chmod +x ~/Downloads/Miniforge3-MacOSX-arm64.sh
     sh ~/Downloads/Miniforge3-MacOSX-arm64.sh
     source ~/miniforge3/bin/activate
-    ```
-
-1. Start a new conda environment for this project:
-    ```shell
-    conda create --name competence_extraction --clone base
-    conda activate competence_extraction
     ```
 
 1. Some additional installations are also required:
@@ -117,11 +111,12 @@
     ```
 
     **Tensorflow:**
+    Download [tensorflow_text] (https://github.com/sun1638650145/Libraries-and-Extensions-for-TensorFlow-for-Apple-Silicon/releases/download/v2.9/tensorflow_text-2.9.0-cp39-cp39-macosx_11_0_arm64.whl)
     ```shell
     conda install -c apple tensorflow-deps
     python -m pip install tensorflow-macos
     python -m pip install tensorflow-metal
-    python -m pip install tensorflow_text
+    python -m pip install Downloads/tensorflow_text-2.9.0-cp39-cp39-macosx_11_0_arm64.whl
     python -m pip install tensorflow_hub
     ```
 
