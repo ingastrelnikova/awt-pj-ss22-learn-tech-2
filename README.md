@@ -6,7 +6,7 @@
 ![image](https://user-images.githubusercontent.com/24925361/181214266-02faef6f-4692-45ec-bf81-4c2641c5e483.png)
 
 
-## Installation (```x86``` platform)
+## Installation (Recommended for ```x86``` Platform)
 
 1. Install Docker according to the instructions on the [Docker website](https://docs.docker.com/get-docker/)
 
@@ -91,11 +91,15 @@
     ```
     to exit container.
 
-## Installation (```ARM/M1``` platform)
+## Installation (Recommended for ```ARM/M1``` Platform)
 
 1. Install [Anaconda environment](https://www.anaconda.com/) first.
 
-1. Open ```Anaconda-Navigator``` -> click ```Enviroments``` -> create a new environment -> click the triangle symbol on this environment -> ```Open Terminal```.
+1. Start a new conda environment for this project:
+    ```shell
+    conda create --name competence_extraction --clone base
+    conda activate competence_extraction
+    ```
 
 1. Some additional installations are also required:
 
