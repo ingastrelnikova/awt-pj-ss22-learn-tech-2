@@ -95,6 +95,13 @@
 
 1. Install [Anaconda environment](https://www.anaconda.com/) first.
 
+1. Download and install [Conda env](https://developer.apple.com/metal/tensorflow-plugin/)
+     ```shell
+    chmod +x ~/Downloads/Miniforge3-MacOSX-arm64.sh
+    sh ~/Downloads/Miniforge3-MacOSX-arm64.sh
+    source ~/miniforge3/bin/activate
+    ```
+
 1. Start a new conda environment for this project:
     ```shell
     conda create --name competence_extraction --clone base
@@ -111,9 +118,11 @@
 
     **Tensorflow:**
     ```shell
-    pip install tensorflow
-    pip install tensorflow_text
-    pip install tensorflow_hub
+    conda install -c apple tensorflow-deps
+    python -m pip install tensorflow-macos
+    python -m pip install tensorflow-metal
+    python -m pip install tensorflow_text
+    python -m pip install tensorflow_hub
     ```
 
     **Neo4J:**
