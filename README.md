@@ -42,21 +42,13 @@
     sudo docker run --user root -p 8889:8888 -p 5000:5000 competence-extraction:1.0
     ```
 
-    Use a browser to open the last link given on the terminal so that you can access the source code. 
-    
-    **!!! Please save this link for future use !!!** 
-    
-    **All existing datasets have been processed, so you can skip this step and directly view the results using the RESTful API in the next step.**
+1. Use a browser to open the last link given on the terminal so that you can access the source code. 
 
-    In case if you want to test the source code or you have new dataset, there are three different Jupyter Notebooks under the ```src/``` path. You can find a detailed description of them in [AWT_Report_IEEE.pdf](./AWT_Report_IEEE.pdf).
-    Here are a few points to highlight:
+    **!!! Please save this link for future use !!!**
+    
+    **All existing datasets have been processed, so you can skip this step and directly view the results using the RESTful API in the next step.** 
+    or follow the [intructions](#code) if you want to run the source code. 
 
-    * Run each block of code in the Jupyter Notebook in the order of ```Preprocessing.ipynb``` -> ```NLP.ipynb``` -> ```Neo4J.ipynb```, you can see all the intermediate steps.
-    * When importing the libraries, if there is an alarm message, it's just because the GPU is not configured for acceleration, which does not affect normal use.
-    * By default the control course dataset is used (the input value of the ```import_course``` function in ```Preprocessing.ipynb```, it will take more than an hour to use the full course dataset), if you want to test other datasets, please replace the input parameters of the ```import_course``` function.
-    * In ```Neo4J.ipynb```, due to the security settings of the cloud database we use, all local computing data cannot be directly imported into the database. It needs to be uploaded to a publicly accessible HTTP or HTTPS server first. It is recommended to use google drive and create a sharing link. The ```get_google_file``` function in ```Neo4J.ipynb``` will extract the address of the direct access data file from it and upload it to the cloud database.
-    * You can also use your own cloud database by replacing ```uri``` ```user``` ```password``` in ```Neo4J.ipynb``` or your own network drive, and upload to the cloud database using a similar method.
-    * ```Evaluation.ipynb``` under  ```src/archive```  is only used as a potential evaluation tool and is not actually used.
 
 1. Use ```Ctrl+C``` (key combinations on the keyboard) to exit the Jupyter Notebook environment, enter
     ```shell
@@ -148,9 +140,22 @@
     jupyter notebook
     ``` 
 
+    **All existing datasets have been processed, so you can skip this step and directly view the results using the RESTful API in the next step.**
+
+    <span id="code"> In case </span> if you want to test the source code or you have new dataset, there are three different Jupyter Notebooks under the ```src/``` path. You can find a detailed description of them in [AWT_Report_IEEE.pdf](./AWT_Report_IEEE.pdf).
+    Here are a few points to highlight:
+
+    * Run each block of code in the Jupyter Notebook in the order of ```Preprocessing.ipynb``` -> ```NLP.ipynb``` -> ```Neo4J.ipynb```, you can see all the intermediate steps.
+    * When importing the libraries, if there is an alarm message, it's just because the GPU is not configured for acceleration, which does not affect normal use.
+    * By default the control course dataset is used (the input value of the ```import_course``` function in ```Preprocessing.ipynb```, it will take more than an hour to use the full course dataset), if you want to test other datasets, please replace the input parameters of the ```import_course``` function.
+    * In ```Neo4J.ipynb```, due to the security settings of the cloud database we use, all local computing data cannot be directly imported into the database. It needs to be uploaded to a publicly accessible HTTP or HTTPS server first. It is recommended to use google drive and create a sharing link. The ```get_google_file``` function in ```Neo4J.ipynb``` will extract the address of the direct access data file from it and upload it to the cloud database.
+    * You can also use your own cloud database by replacing ```uri``` ```user``` ```password``` in ```Neo4J.ipynb``` or your own network drive, and upload to the cloud database using a similar method.
+    * ```Evaluation.ipynb``` under  ```src/archive```  is only used as a potential evaluation tool and is not actually used.
+
 1. Use ```Ctrl+C``` (key combinations on the keyboard) to exit the Jupyter Notebook environment, enter
     ```shell
-    python Downloads/awt-pj-ss22-learn-tech-2/src/app.py 
+    cd Downloads/awt-pj-ss22-learn-tech-2/src
+    flask run --port=5001
     ```
     to run the RESTful API, and open the first link according to the information on the terminal in the browser.
 
