@@ -7,7 +7,8 @@
 
 
 ## Installation
-It is recommended to configure the environment directly using our ```Dockerfile```:
+It is recommended to configure the environment directly using our ```Dockerfile``` 
+(Based on the ```x86``` Platform, ```ARM/M1``` has compatibility issues and is temporarily not supported):
 
 1. Install Docker according to the instructions on the [Docker website](https://docs.docker.com/get-docker/)
 
@@ -22,10 +23,6 @@ It is recommended to configure the environment directly using our ```Dockerfile`
     Type the following command to build the Docker image from the Dockerfile:
     ```shell
     sudo DOCKER_BUILDKIT=1 docker build -t competence-extraction:1.0 ./
-    ```
-    or use this command if you have **M1** chip
-    ```shell
-    sudo DOCKER_BUILDKIT=1 docker build --platform linux/amd64 -t competence-extraction:1.0 ./
     ```
     All dependencies will be downloaded automatically, which will last for a while.
 
