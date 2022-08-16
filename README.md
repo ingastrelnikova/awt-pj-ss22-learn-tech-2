@@ -137,6 +137,11 @@
     ```shell
     conda install -c conda-forge jupyter jupyterlab -y
     ```
+    
+    **Pandas:**
+    ```shell
+    conda install -c pandas
+    ``` 
 
 ## Core Components:
 * [Data Preprocessing](./src/Preprocessing.ipynb)
