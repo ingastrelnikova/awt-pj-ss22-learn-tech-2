@@ -111,6 +111,7 @@
     ```
 
     **Tensorflow:**
+    
     Download [tensorflow_text](https://github.com/sun1638650145/Libraries-and-Extensions-for-TensorFlow-for-Apple-Silicon/releases/download/v2.9/tensorflow_text-2.9.0-cp39-cp39-macosx_11_0_arm64.whl)
     ```shell
     conda install -c apple tensorflow-deps
