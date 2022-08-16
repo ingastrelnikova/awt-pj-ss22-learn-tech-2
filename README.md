@@ -7,7 +7,7 @@
 
 
 ## Installation
-(Based on the ```x86``` Platform, ```ARM/M1``` has compatibility issues and is temporarily not supported)
+(Based on the ```x86``` platform, ```ARM/M1``` has compatibility issues and is temporarily not supported)
 
 It is recommended to configure the environment directly using our ```Dockerfile```:
 
