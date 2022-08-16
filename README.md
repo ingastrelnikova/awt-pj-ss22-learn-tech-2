@@ -127,10 +127,15 @@
     ```
 
     **RESTful API:**
-    ```
+    ```shell
     pip install Flask~=2.1.2
     pip install flask-restx==0.5.1
     pip install werkzeug==2.1.2
+    ```
+
+    **Jupyter Notebook:**
+    ```shell
+    conda install -c conda-forge jupyter jupyterlab -y
     ```
 
 ## Core Components:
