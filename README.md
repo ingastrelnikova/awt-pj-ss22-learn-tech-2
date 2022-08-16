@@ -137,6 +137,7 @@
 
 1. **Use Jupyter Notebook to run source code:**
     ```shell
+    cd Downloads/awt-pj-ss22-learn-tech-2/src
     jupyter notebook
     ``` 
 
@@ -154,7 +155,6 @@
 
 1. Use ```Ctrl+C``` (key combinations on the keyboard) to exit the Jupyter Notebook environment, enter
     ```shell
-    cd Downloads/awt-pj-ss22-learn-tech-2/src
     flask run --port=5001
     ```
     to run the RESTful API, and open the first link according to the information on the terminal in the browser.
