@@ -1,10 +1,16 @@
-# SS22 Project Advanced Web Technologies 
+# SS22 Project Advanced Web Technologies
+
 ## Learning Technologies - Competence Extraction via ML / NLP
+
 <img width="300" alt="TUB" src="https://user-images.githubusercontent.com/24925361/178028367-d6106e60-664a-41d7-940f-46c9e59ed870.png"> <img width="382" alt="FOKUS" src="https://user-images.githubusercontent.com/24925361/178028417-3c6a1740-cf41-4a98-8f3f-735cbfbd9b0b.png">
+
+![image](https://user-images.githubusercontent.com/24925361/228803285-b59df078-56b3-4404-8182-b1713fc39d79.png)
+![image](https://user-images.githubusercontent.com/24925361/228803308-cdf1ddc3-1cf0-4377-b2a6-7236317502e5.png)
 
 ## Project Architecture
 ![image](https://user-images.githubusercontent.com/24925361/181214266-02faef6f-4692-45ec-bf81-4c2641c5e483.png)
 
+[For more details](AWT_Report_IEEE.pdf)
 
 ## Installation (Recommended for ```x86``` Platform)
 
